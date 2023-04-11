@@ -1,0 +1,153 @@
+<div class="container " >
+
+    <h2> User Info </h2>
+
+    <form [formGroup]="userForm" (ngSubmit)="onSave()" class="formClass">
+
+
+        <div class="form-group">
+
+            <mat-form-field appearance="fill">
+                <mat-label>Name</mat-label>
+                <input matInput class="form-control" name="city" formControlName="name">
+            </mat-form-field>
+
+            <div *ngIf="userForm.controls['name'].hasError('required')">
+                Please enter a name
+            </div>
+
+            <div *ngIf="userForm.controls['name'].hasError('minlength')">
+                Please enter a name of at least 4 characters
+            </div>
+
+            <div *ngIf="userForm.controls['name'].hasError('maxlength')">
+                Please enter a name of at the most 10 characters
+            </div>
+
+        </div>
+
+        <br>
+        <br>
+
+
+
+        <div class="form-group">
+
+            <mat-form-field appearance="fill">
+                <mat-label>Age</mat-label>
+                <input matInput class="form-control" name="Age" formControlName="age">
+            </mat-form-field>
+
+
+            <div *ngIf="userForm.controls['age'].hasError('required')">
+                Please enter a valid age between 0 and 150
+            </div>
+
+            <div *ngIf="userForm.controls['age'].hasError('min')">
+                Minimum age should be 0
+            </div>
+
+            <div *ngIf="userForm.controls['age'].hasError('max')">
+                Maximum age should be 150
+            </div>
+
+        </div>
+
+
+        <br>
+        <br>
+
+        <div class="form-group">
+
+            <mat-form-field appearance="fill">
+                <mat-label>Gender</mat-label>
+                <mat-select class="form-control" formControlName="gender">
+                    <mat-option *ngFor="let gender of genders" [value]="gender.value">
+                        {{gender.viewValue}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+
+            <div *ngIf="userForm.controls['gender'].hasError('required')">
+                Please select a gender option
+            </div>
+
+        </div>
+
+
+        <br>
+        <br>
+
+
+        <div class="form-group">
+
+            <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput class="form-control" name="email" formControlName="email">
+            </mat-form-field>
+
+
+            <div *ngIf="userForm.controls['email'].hasError('pattern')">
+                Please enter acceptable email ID
+            </div>
+        </div>
+
+
+        <br>
+        <br>
+
+
+        <div formGroupName="address">
+
+            <div class="form-group">
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Street</mat-label>
+                    <input matInput class="form-control" name="street" formControlName="street">
+                </mat-form-field>
+
+
+
+            </div>
+
+
+            <br>
+            <div class="form-group">
+
+                <mat-form-field appearance="fill">
+                    <mat-label>City</mat-label>
+                    <input matInput class="form-control" name="city" formControlName="city">
+                </mat-form-field>
+
+
+            </div>
+
+            <br>
+
+            <div class="form-group">
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Zip Code</mat-label>
+                    <input matInput class="form-control" name="zipCode" formControlName="postal_code">
+                </mat-form-field>
+
+
+
+            </div>
+
+
+        </div>
+
+
+        <br>
+        <button  type="submit" class="btn btn-dark submitButton" [disabled]="!userForm.valid"> Submit
+            Form </button>
+    </form>
+
+
+    <div *ngIf="isFormReady">
+
+        <!-- <app-model-form-child  [formData]="userForm.value"  ></app-model-form-child> -->
+
+    </div>

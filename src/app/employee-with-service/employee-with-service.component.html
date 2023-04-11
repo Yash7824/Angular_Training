@@ -1,0 +1,11 @@
+<div *ngFor="let employee of EmployeeRecord">
+    <h1>{{employee.employeeName}}</h1>
+    <p>{{employee.employeeAge}}</p>
+    <p>{{employee.employeeId}}</p>
+
+    <div *ngFor="let skill of employee.employeeSkills">
+        <p>{{skill}}</p>
+    </div>
+</div>
+
+{{bitcoinData | json}}

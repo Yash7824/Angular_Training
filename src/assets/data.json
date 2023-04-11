@@ -1,0 +1,29 @@
+[
+    {
+        "employeeId" : 101,
+        "employeeName": "Yash",
+        "employeeAge": 22,
+        "employeeEmailId": "yash@abc.com",
+        "employeeSkills": ["Programming", "Machine Learning", "AI"]
+    
+    },
+    
+    {
+        "employeeId" : 102,
+        "employeeName": "Sanchit",
+        "employeeAge": 12,
+        "employeeEmailId": "sanchit@abc.com",
+        "employeeSkills": ["Programming", "Flutter", "TP"]
+    
+    },
+    
+    {
+        "employeeId" : 103,
+        "employeeName": "Saud",
+        "employeeAge": 6,
+        "employeeEmailId": "saud@abc.com",
+        "employeeSkills": ["Programming", "Angular", "TP"]
+    
+      }
+
+]

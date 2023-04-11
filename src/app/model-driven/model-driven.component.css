@@ -1,0 +1,13 @@
+
+
+.formClass{
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr 1fr;
+    row-gap: 5px;
+    column-gap: 5px;
+}
+
+.submitButton{
+    width: 8rem;
+    height: 2rem;
+}

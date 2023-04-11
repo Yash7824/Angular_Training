@@ -1,0 +1,7 @@
+<ng-template #message>
+    HELLO EVERYONE
+</ng-template>
+
+<ng-container *ngIf="!isReady else message">
+    <button (click)="isReady=true" class="btn btn-outline-dark">See Message</button>
+</ng-container>

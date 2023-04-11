@@ -1,0 +1,56 @@
+<!-- <h1>Hello World</h1>
+<router-outlet></router-outlet>
+<a routerLink="customer">customer</a>
+
+<p [class]="classValue">Lorem ipsum dolor sit, amet consectetur adipisicing </p>
+<button (click)="changeClass()">Change Class</button>
+<app-customer></app-customer>
+
+<app-employee></app-employee> -->
+
+<!-- <app-employee-with-service></app-employee-with-service> -->
+
+<!-- <app-github-user></app-github-user> -->
+
+<!-- <app-crypto-single-price></app-crypto-single-price> -->
+
+<!-- <app-github-repo></app-github-repo> -->
+
+<!-- <app-bitcoin></app-bitcoin> -->
+
+<!-- <app-calculator></app-calculator> -->
+
+<!-- <app-pipes-demo></app-pipes-demo> -->
+
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary bg-primary" data-bs-theme="dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">App</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0" *ngFor="let nav of navArray">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" routerLink={{nav.value}}>{{nav.viewValue}}</a>
+          </li>
+          
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+<router-outlet></router-outlet>
+<!-- <div *ngFor="let item of navArray">
+  <div *ngIf="item.value != ''">
+    {{item | json}}
+    <button class="btn btn-primary" (click)="goBackHome()">Go back</button>
+  </div>
+</div> -->

@@ -1,0 +1,50 @@
+Angular application Architecture
+
+Module: a collection of multiple related components
+        eg: An order module can consist of 2 components 
+            a) A shipping address component
+            b) payments component
+
+
+Components: a component is the smallest independent unit of an Angular app that serves one purpose inside the
+            app
+
+
+MVC Architecture:
+
+
+Every component in angular has 4 files
+
+1) <component-name>.component.ts: logic for component's functionality
+2) <component-name>.component.html: view part of the component goes here!
+3) <component-name>.component.css: styling for the component goes here. COMPONENT SPECIFIC
+4) <component-name>.component.spec.ts: write unit tests for the component here.
+
+
+2-way binding:
+
+It is a scenario in which an activity in the view file is linked to component.ts and vice-versa.
+
+
+one-way binding and two-way binding
+
+One-way binding:
+1) Data-Binding
+2) Event-Binding
+3) Style-binding
+4) Class-Binding
+
+angular supports 2 types of forms
+1) template driven
+2) reactive forms
+
+simple forms with very few fields : Template driven forms
+complex forms : Reactive forms (model driven form)
+
+
+how to make a template driven form
+1) decide the layout of the form and create properties in component class for each field
+2) in the html: create a form tag: 2 compulsory attributes must be there: FORM MUST BE MAPPED TO A HTML TEMPLATE 
+VARIABLE
+3) each filed in the form has to be stored in its own div tag -> div tag: class="form-group"
+4) each html component of the form gets one class name of form-control

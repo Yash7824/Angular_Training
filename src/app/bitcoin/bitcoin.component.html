@@ -1,0 +1,26 @@
+<p>bitcoin works!</p>
+
+
+<table>
+    <thead>
+        <th>time</th>
+        <th>high</th>
+        <th>low</th>
+        <th>open</th>
+        <th>close</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let bd of BitcoinData">
+            
+                <td>{{bd.time}}</td>
+                <td>{{bd.high}}</td>
+                <td>{{bd.low}}</td>
+                <td>{{bd.open}}</td>
+                <td>{{bd.close}}</td>
+            
+        </tr>
+    </tbody>
+</table>
+
+
+<button (click)="fetchData()">Show Data</button>

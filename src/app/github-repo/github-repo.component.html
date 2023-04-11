@@ -1,0 +1,21 @@
+<p>github-repo works!</p>
+<button (click)="fetchProjectResponse()">Display</button>
+<table>
+    <thead>
+        <th>Full Name</th>
+        <th>Node Id</th>
+        <th>Default Branch</th>
+        <th>Open Issues</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let repo of repos">
+            <td>{{repo.full_name}}</td>
+            <td>{{repo.node_id}}</td>
+            <td>{{repo.default_branch}}</td>
+            <td>{{repo.open_issues}}</td>
+            
+        </tr>
+    </tbody>
+</table>
+
+<!-- {{repos | json}} -->

@@ -1,0 +1,27 @@
+<p>{{customerName}} is {{customerAge}} years old</p>
+
+<button (click)="showMessage()">Click Me</button>
+
+<p [ngStyle]="style1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, ipsum.</p>
+
+<button (click)="changeStyle()">Change Style</button>
+
+
+<p [style.color]="styleClass">Displaying message</p>
+
+<!-- <button (click)="toggleDisplay()">Toggle Display</button>
+<div [hidden]="toggleBox">
+    haha
+</div> -->
+
+<button (click)="ShowData()">Display Data</button>
+<div class="DisplayDataClass">
+    <p>{{employee[0].name}}</p>
+    <p>{{employee[0].age}}</p>
+    <p>{{employee[0].email}}</p>
+    <p>{{employee[0].skills}}</p>
+    
+    
+</div>
+
+
