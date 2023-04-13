@@ -1,21 +1,44 @@
-<!-- {{githubUserData | json}} -->
-<div class="container my-3">
-    <button (click)="fetchData()" class="btn btn-danger">{{statusButton}}</button>
+<div class="Middle--div">
+  <!-- <h2>Display Details of Fabpot</h2>
+  <div class="container my-3">
+    <button (click)="fetchData()" class="btn btn-danger">
+      {{ statusButton }}
+    </button>
     <div [hidden]="isReady">
-        <h1>{{githubUserData.name}}</h1>
-        <h2>{{githubUserData.bio}}</h2>
+      <h1>{{ githubUserData.name }}</h1>
+      <h2>{{ githubUserData.bio }}</h2>
 
-        <p>{{githubUserData.id}}</p>
-        <p>{{githubUserData.location}}</p>
+      <p>{{ githubUserData.id }}</p>
+      <p>{{ githubUserData.location }}</p>
 
-        <p>{{githubUserData.company}}</p>
+      <p>{{ githubUserData.company }}</p>
     </div>
-</div>
+  </div> -->
 
+  <div class="container my-2">
+    <h1>Enter your Input</h1>
+    <input
+      type="text"
+      class="form-control"
+      [(ngModel)]="githubUser"
+      name="githubUser"
+      placeholder="Enter the Username"
+    />
+    <button class="btn btn-dark my-2" (click)="showResult()">
+      {{ showButton }}
+    </button>
+    <mat-grid-list cols="2" rowHeight="2:1" [hidden]="showContent" class="my-3">
+      <mat-grid-tile class="matGridListClass">
+        <div class="mat-grid-tile-content">
+          <h1>{{ Result.name }}</h1>
+          <h2>{{ Result.bio }}</h2>
 
-<div class="container my-2">
-    <h4>Enter your Input</h4>
-    <input type="text" class="form-control" [(ngModel)]="githubUser" name="githubUser">
-    <button class="btn btn-dark my-1" (click)="showResult()">Show</button>
-    {{Result | json}}
+          <p>ID: {{ Result.id }}</p>
+          <p>{{ Result.location }}</p>
+
+          <p>{{ Result.company }}</p>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
 </div>

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CustomerComponent } from './customer/customer.component';
@@ -13,8 +13,8 @@ import { BitcoinComponent } from './bitcoin/bitcoin.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { FormsModule } from '@angular/forms';
 import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
-import {MatInputModule} from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LandingComponent } from './landing/landing.component';
 import { ErrorComponent } from './error/error.component';
@@ -23,10 +23,14 @@ import { UpdateDataComponent } from './update-data/update-data.component';
 import { EmployeeWithIdComponent } from './employee-with-id/employee-with-id.component';
 import { ModelDrivenComponent } from './model-driven/model-driven.component';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
-import {ReactiveFormsModule} from '@angular/forms';
-import {MatCardModule} from '@angular/material/card';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatCardModule } from '@angular/material/card';
 import { StructuralDirectivesDemoComponent } from './structural-directives-demo/structural-directives-demo.component';
-
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { ModelFormChildComponent } from './model-form-child/model-form-child.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -48,7 +52,7 @@ import { StructuralDirectivesDemoComponent } from './structural-directives-demo/
     ModelDrivenComponent,
     TemplateDrivenComponent,
     StructuralDirectivesDemoComponent,
-    
+    ModelFormChildComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,9 +63,13 @@ import { StructuralDirectivesDemoComponent } from './structural-directives-demo/
     MatSelectModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    MatCardModule
+    MatCardModule,
+    MatGridListModule,
+    MatTableModule,
+    MatButtonModule,
+    MatIconModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

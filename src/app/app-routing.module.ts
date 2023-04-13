@@ -14,31 +14,34 @@ import { EmployeeWithIdComponent } from './employee-with-id/employee-with-id.com
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 import { ModelDrivenComponent } from './model-driven/model-driven.component';
 import { StructuralDirectivesDemoComponent } from './structural-directives-demo/structural-directives-demo.component';
-
+import { PipesDemoComponent } from './pipes-demo/pipes-demo.component';
 
 const routes: Routes = [
-  {path: "", component: LandingComponent},
-  {path: "crypto", component: CryptoSinglePriceComponent},
-  {path: "user", component: GithubUserComponent},
-  {path: "project", component: GithubRepoComponent},
-  {path: 'customer', component: CustomerComponent},
-  {path: 'employee',
-children: [
-  {path: "", component: EmployeeComponent},
-  {path: ":eid", component: EmployeeWithIdComponent},
-  {path: "salary", component: SalaryComponent},
-  {path: "update", component: UpdateDataComponent},
-]},
+  { path: '', component: LandingComponent },
+  { path: 'crypto', component: CryptoSinglePriceComponent },
+  { path: 'user', component: GithubUserComponent },
+  { path: 'project', component: GithubRepoComponent },
+  { path: 'customer', component: CustomerComponent },
+  {
+    path: 'employee',
+    children: [
+      { path: '', component: EmployeeComponent },
+      { path: ':eid', component: EmployeeWithIdComponent },
+      { path: 'salary', component: SalaryComponent },
+      { path: 'update', component: UpdateDataComponent },
+    ],
+  },
 
-  {path: 'calculator', component: CalculatorComponent},
-  {path: 'template', component: TemplateDrivenComponent},
-  {path: 'reactive', component: ModelDrivenComponent},
-  {path: 'structure', component: StructuralDirectivesDemoComponent},
-  {path: '**', component: ErrorComponent},
+  { path: 'calculator', component: CalculatorComponent },
+  { path: 'template', component: TemplateDrivenComponent },
+  { path: 'reactive', component: ModelDrivenComponent },
+  { path: 'structure', component: StructuralDirectivesDemoComponent },
+  { path: 'pipes', component: PipesDemoComponent },
+  { path: '**', component: ErrorComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,21 +1,28 @@
-<p>github-repo works!</p>
-<button (click)="fetchProjectResponse()">Display</button>
-<table>
-    <thead>
-        <th>Full Name</th>
-        <th>Node Id</th>
-        <th>Default Branch</th>
-        <th>Open Issues</th>
-    </thead>
-    <tbody>
-        <tr *ngFor="let repo of repos">
-            <td>{{repo.full_name}}</td>
-            <td>{{repo.node_id}}</td>
-            <td>{{repo.default_branch}}</td>
-            <td>{{repo.open_issues}}</td>
-            
-        </tr>
-    </tbody>
-</table>
+<div class="Display--Repositories">
+  <h2>Display All the Repositories</h2>
+  <button mat-raised-button color="primary" (click)="fetchProjectResponse()">
+    {{ buttonName }}
+  </button>
+</div>
 
-<!-- {{repos | json}} -->
+<table
+  class="table table-striped table-hover container"
+  [hidden]="toggleDisplay"
+>
+  <thead>
+    <tr>
+      <th>Full Name</th>
+      <th>Node Id</th>
+      <th>Default Branch</th>
+      <th>Open Issues</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let repo of repos" class="table-active">
+      <td style="color: rgb(7, 52, 76)">{{ repo.full_name }}</td>
+      <td style="color: rgb(7, 52, 76)">{{ repo.node_id }}</td>
+      <td style="color: rgb(7, 52, 76)">{{ repo.default_branch }}</td>
+      <td style="color: rgb(7, 52, 76)">{{ repo.open_issues }}</td>
+    </tr>
+  </tbody>
+</table>

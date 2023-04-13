@@ -1,1 +1,9 @@
-<p>landing works!</p>
+<div class="Navbar--list">
+  <div *ngFor="let nav of navArray" class="matCard">
+    <mat-card class="mat">
+      <mat-card-content routerLink="{{ nav.value }}" class="matCard--value">{{
+        nav.viewValue
+      }}</mat-card-content>
+    </mat-card>
+  </div>
+</div>

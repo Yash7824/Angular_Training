@@ -1,15 +1,16 @@
-<p>pipes-demo works!</p>
+<div class="pipes--container">
+  <h1>Pipes are working</h1>
+  <p>{{ dateTimeObj | date : "fullDate" }}</p>
 
-{{dateTimeObj | date:'fullDate'}}
-<br>
-{{dateTimeObj | date: 'long'}}
-<br>
-{{dateTimeObj | date: 'shortDate'}}
-<br>
-{{amount | currency:'USD'}}
-<br>
-{{amount | currency:'INR':'symbol':'5.3-4'}}
-<br>
-{{data | uppercase}}
-<br>
-{{pctValue | percent}}
+  <p>{{ dateTimeObj | date : "long" }}</p>
+
+  <p>{{ dateTimeObj | date : "shortDate" }}</p>
+
+  <p>{{ amount | currency : "USD" }}</p>
+
+  <p>{{ amount | currency : "INR" : "symbol" : "5.3-4" }}</p>
+
+  <p>{{ data | uppercase }}</p>
+
+  <p>{{ pctValue | percent }}</p>
+</div>

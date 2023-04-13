@@ -1,13 +1,36 @@
-<button (click)="fetchResponse()">Show Data</button>
-<div *ngIf="isReady">
-    <p>{{Crypto.USD}}</p>
-    <p>{{Crypto.JPY}}</p>
-    <p>{{Crypto.EUR}}</p>
+<div class="Crypto--Container">
+  <h2>Enter the Crypto Currency</h2>
+  <mat-form-field class="example-full-width">
+    <mat-label *ngIf="!cryptoInput">Enter currency</mat-label>
+    <input
+      matInput
+      name="cryptoInput"
+      [(ngModel)]="cryptoInput"
+      id="cryptoInput"
+    />
+  </mat-form-field>
+
+  <button mat-raised-button color="accent" (click)="showResult()">
+    Show Data
+  </button>
+
+  <mat-card
+    class="matCard"
+    *ngIf="Result.USD != 0 && Result.EUR != 0 && Result.JPY != 0"
+  >
+    <mat-card class="matCard--Heading">
+      <mat-card-content>Results for {{ cryptoInput }}</mat-card-content>
+    </mat-card>
+
+    <mat-card-content style="margin-top: 5px"
+      >USD : {{ Result.USD }}</mat-card-content
+    >
+    <mat-card-content>EUR : {{ Result.EUR }}</mat-card-content>
+    <mat-card-content>JPY : {{ Result.JPY }}</mat-card-content>
+  </mat-card>
 </div>
 
-<div>
-    <h2>Enter the Crypto Currency</h2>
-    <input type="text" name="cryptoInput" [(ngModel)]="cryptoInput" id="cryptoInput">
-    <button class="btn btn-primary" (click)="showResult()">Show Data</button>
-    {{Result | json}}
+<div class="Note">
+  <h2 class="text-danger">Note</h2>
+  <p>Url can be manipulated by changing the value of variable: crytpoInput</p>
 </div>

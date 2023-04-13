@@ -1,0 +1,33 @@
+.Navbar--list{
+    display: grid;
+    width: 80vw;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 10px;
+    column-gap: 40px;
+    margin-top: 40px;
+    margin-left: 90px;
+    
+}
+
+.matCard{
+    text-align: center;
+    
+}
+
+.mat{
+    border-radius: 10px;
+}
+.matCard :hover{
+    transition: 1s;
+    transform: scale(1.1);
+    cursor: pointer;
+    
+}
+
+.matCard--value{
+    background-image: linear-gradient(to left top, #f85985, #f96275, #f76d66, #f2795a, #eb8551);
+}
+
+.matCard--value:hover{
+    background-image: linear-gradient(to left top, #ff0010, #e00510, #c2090f, #a50b0e, #880c0c);
+}

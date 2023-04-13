@@ -1,52 +1,40 @@
+<div class="Calculator--Container">
+  <h1>Perform Calculations</h1>
+  <form #myform="ngForm" class="example-form">
+    <mat-form-field class="example-full-width">
+      <input
+        type="number"
+        matInput
+        name="firstNumber"
+        id="firstNumber"
+        (input)="menuFunction()"
+        [(ngModel)]="firstNumber"
+        placeholder="Number-1"
+      />
+      <br />
+    </mat-form-field>
 
-<form #myform="ngForm" class="example-form">
-    <!-- <input type="number" name="firstNumber" id="firstNumber" (input)="calculator(operation)" [(ngModel)]="firstNumber" placeholder="Number-1"> <br> -->
-    <!-- <input type="number" name="secondNumber" id="secondNumber" (input)="calculator(operation)" [(ngModel)]="secondNumber" placeholder="Number-2"> <br> -->
+    <mat-form-field class="example-full-width">
+      <input
+        type="number"
+        matInput
+        name="secondNumber"
+        id="secondNumber"
+        (input)="menuFunction()"
+        [(ngModel)]="secondNumber"
+        placeholder="Number-2"
+      />
+      <br />
+    </mat-form-field>
+  </form>
 
-    <mat-form-field class="example-full-width ">
-        <input type="number" matInput name="firstNumber" id="firstNumber" (input)="menuFunction()" [(ngModel)]="firstNumber" placeholder="Number-1"> <br>
-      </mat-form-field>
-   
-      <mat-form-field class="example-full-width">
-        <input type="number" matInput name="secondNumber" id="secondNumber" (input)="menuFunction()" [(ngModel)]="secondNumber" placeholder="Number-2"> <br>
-      </mat-form-field>
-    
+  <mat-form-field appearance="fill">
+    <mat-select [(ngModel)]="optionText" (ngModelChange)="mapOptionToEnum()">
+      <mat-option *ngFor="let opr of operationArray" [value]="opr.value">
+        {{ opr.viewValue }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
-</form>
-
-
-
-<!-- <div >
-    <select name="operation" id="" [(ngModel)]="operation">
-        <option value="+" >Addition</option>
-        <option value="-" >Subtraction</option>
-        <option value="*" >Multiplication</option>
-        <option value="/" >Division</option>
-    </select>
-</div> -->
-
-
-
-<!-- <div >
-    <select name="operation" id="" [(ngModel)]="optionText" (ngModelChange)="mapOptionToEnum()">
-        <option >Addition</option>
-        <option  >Subtraction</option>
-        <option  >Multiplication</option>
-        <option  >Division</option>
-    </select>
-</div> -->
-
-<mat-form-field appearance="fill">
-  <mat-select [(ngModel)]="optionText" (ngModelChange)="mapOptionToEnum()">
-    <mat-option *ngFor="let opr of operationArray" [value]="opr.value">
-      {{opr.viewValue}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
-
-
-
-<p>The option chosen is {{optionText}} and the result is: {{result}}</p>
-
-
-
+  <p>The option chosen is {{ optionText }} and the result is: {{ result }}</p>
+</div>

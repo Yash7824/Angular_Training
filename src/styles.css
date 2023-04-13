@@ -1,6 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Ubuntu:wght@300;400&display=swap');
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
-    background-image: linear-gradient(to right top, #252236, #35405b, #416181, #4985a4, #53abc4);
+body { 
+    margin: 0; 
+    font-family: Roboto, "Helvetica Neue", sans-serif; 
+    background-image: radial-gradient(circle, #9daac1, #8399b8, #6789af, #457aa5, #076b9b);
+    font-family: 'Ubuntu', sans-serif;
 }

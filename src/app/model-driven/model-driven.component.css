@@ -1,11 +1,19 @@
-
-
-.formClass{
-    display: grid;
-    grid-template-columns:  1fr 1fr 1fr 1fr;
-    row-gap: 5px;
-    column-gap: 5px;
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
+
+.reactive--container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 30vw;
+    column-gap: 4px;
+}
+
+
 
 .submitButton{
     width: 8rem;

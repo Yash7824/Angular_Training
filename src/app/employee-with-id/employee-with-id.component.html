@@ -1,4 +1,16 @@
-<button class="btn btn-primary" (click)="runCode()">Click</button>
-<div *ngIf="employee">
-    {{employee | json}}
+<div class="Employee--ID--Container">
+  <button class="btn btn-primary" (click)="runCode()">Show Details</button>
+  <div [hidden]="toggleDisplay" class="EmployeeShow">
+    <mat-grid-list cols="2" rowHeight="2:1">
+      <mat-grid-tile>
+        <div class="mat-grid-tile-content">
+          <p><b>EmployeeID:</b> {{ employee.employeeId }}</p>
+          <p><b>Employee Name:</b> {{ employee.employeeName }}</p>
+          <p><b>Employee Age:</b>{{ employee.employeeAge }}</p>
+          <p><b>Employee Email:</b> {{ employee.employeeEmailId }}</p>
+          <p><b>Employee Skills:</b> {{ employee.employeeSkills }}</p>
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
 </div>

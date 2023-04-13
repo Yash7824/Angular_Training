@@ -1,0 +1,43 @@
+.Crypto--Container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px;
+    margin-top: 20px;
+}
+
+.matCard{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    width: 20vw;
+    background-color: rgb(160, 229, 153)
+}
+
+.matCard--Heading{
+    display: flex;
+    width: 15vw;
+    height: 4vh;
+    padding: 5px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 35px;
+    margin-top: 5px;
+}
+
+.Note{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    bottom: 550px;
+    right: 420px;
+    width: 150px;
+    border: 1px solid rgb(239, 130, 130);
+    background-color: antiquewhite;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

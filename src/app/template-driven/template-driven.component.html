@@ -1,134 +1,152 @@
 <div class="container">
+  <h2>User Info</h2>
 
-    <h2> User Info </h2>
-
-  
-    <form #userForm="ngForm"  (ngSubmit) = "OnSubmit(userForm.value)" > 
-
-
-    <div class="form-group">
-
+  <form #userForm="ngForm" (ngSubmit)="OnSubmit(userForm.value)">
+    <div class="template--container">
+      <div class="form-group">
         <mat-form-field appearance="fill">
-            <mat-label>Name</mat-label>
-            <input matInput class = "form-control" name="userName" [(ngModel)]="userName"  required minlength="4" 
-            maxlength="10" #nameField="ngModel" maxlength="10" >
-            
-          </mat-form-field>
-          <p>{{userName}}</p>
+          <mat-label>Name</mat-label>
+          <input
+            matInput
+            class="form-control"
+            name="userName"
+            [(ngModel)]="userName"
+            required
+            minlength="4"
+            maxlength="10"
+            #nameField="ngModel"
+            maxlength="10"
+          />
+        </mat-form-field>
+        <p>{{ userName }}</p>
+      </div>
 
+      <div *ngIf="nameField.touched" name="validatingName">
+        <p *ngIf="nameField.errors?.['required']" class="error">
+          First Name is mandatory
+        </p>
+        <p *ngIf="nameField.errors?.['minlength']">
+          minimum length should be 4
+        </p>
+        <p *ngIf="nameField.errors?.['maxlength']">
+          maximum length should be 10. try again!
+        </p>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            class="form-control"
+            name="email"
+            [(ngModel)]="userEmail"
+            pattern="^[a-z][a-z0-9_]{3,}@[a-z]+\.[a-z]{2,4}"
+            required
+            #emailField="ngModel"
+          />
+        </mat-form-field>
+        <p>{{ userEmail }}</p>
+      </div>
+
+      <div *ngIf="emailField.touched" name="validatingName">
+        <p *ngIf="emailField.errors?.['required']" class="error text-danger">
+          EMAIL ID is mandatory
+        </p>
+        <p *ngIf="emailField.errors?.['pattern']" class="text-danger">
+          pattern does not match
+        </p>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Gender</mat-label>
+          <input
+            matInput
+            class="form-control"
+            name="userGender"
+            [(ngModel)]="userGender"
+            required
+            #genderField="ngModel"
+          />
+        </mat-form-field>
+        <p>{{ userGender }}</p>
+      </div>
+
+      <div *ngIf="genderField.touched" name="validatingName">
+        <p *ngIf="genderField.errors?.['required']" class="error text-danger">
+          Gender is mandatory
+        </p>
+        <p *ngIf="nameField.errors?.['maxlength']" class="text-danger">
+          maximum length should be 10. try again!
+        </p>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Mobile</mat-label>
+          <input
+            matInput
+            class="form-control"
+            name="mobile"
+            [(ngModel)]="userMobile"
+            pattern="^\+91[6-9][0-9]{9}"
+            required
+            #mobileField="ngModel"
+          />
+        </mat-form-field>
+        <p>{{ userMobile }}</p>
+      </div>
+
+      <div *ngIf="mobileField.touched" name="validatingName">
+        <p *ngIf="mobileField.errors?.['required']" class="error">
+          Mobile number is mandatory
+        </p>
+        <p *ngIf="mobileField.errors?.['pattern']">pattern does not match</p>
+      </div>
     </div>
 
-    <!--
-        Name has to be validated. We need to take actions & print msgs based on state of validation
-    --> 
-
-    <div  *ngIf="nameField.touched" name="validatingName">
-
-        <p *ngIf="nameField.errors?.['required']" class="error"> First Name is mandatory </p>
-        <p *ngIf="nameField.errors?.['minlength']"> minimum length should be 4 </p>
-        <p *ngIf="nameField.errors?.['maxlength']"> maximum length should be 10. try again! </p>
-
-    </div> 
-
-
-    <div class="form-group">
-
+    <div ngModelGroup="address" class="template--container">
+      <div class="form-group">
         <mat-form-field appearance="fill">
-            <mat-label>Email</mat-label>
-            <input matInput class = "form-control" name="email" [(ngModel)]="userEmail" pattern="^[a-z][a-z0-9_]{3,}@[a-z]+\.[a-z]{2,4}" required #emailField="ngModel" >
-            
-          </mat-form-field>
-          <p> {{userEmail}}</p>
+          <mat-label>Street</mat-label>
+          <input
+            matInput
+            class="form-control"
+            name="street"
+            [(ngModel)]="userStreet"
+          />
+        </mat-form-field>
+        <p>{{ userStreet }}</p>
+      </div>
 
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>City</mat-label>
+          <input
+            matInput
+            class="form-control"
+            name="city"
+            [(ngModel)]="userCity"
+          />
+        </mat-form-field>
+        <p>{{ userCity }}</p>
+      </div>
+
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Street</mat-label>
+          <input
+            matInput
+            class="form-control"
+            name="zipcode"
+            [(ngModel)]="userZipCode"
+          />
+        </mat-form-field>
+        <p *ngIf="userZipCode">{{ userZipCode }}</p>
+      </div>
     </div>
 
-    <!--validate email-->
-
-    <div  *ngIf="emailField.touched" name="validatingName">
-
-      <p *ngIf="emailField.errors?.['required']" class="error text-danger"> EMAIL ID is mandatory </p>
-      <p *ngIf="emailField.errors?.['pattern']" class="text-danger"> pattern does not match </p>
-      
-  </div> 
-
-  <div class="form-group">
-
-    <mat-form-field appearance="fill">
-        <mat-label>Gender</mat-label>
-        <input matInput class = "form-control" name="userGender" [(ngModel)]="userGender"required #genderField="ngModel">   
-      </mat-form-field>
-      <p> {{userGender}}</p>
-
-
-  </div>
-
-  <!--validate email-->
-
-  <div  *ngIf="genderField.touched" name="validatingName">
-
-    <p *ngIf="genderField.errors?.['required']" class="error text-danger"> Gender is mandatory </p>
-    <p *ngIf="nameField.errors?.['maxlength']" class="text-danger"> maximum length should be 10. try again! </p>
-
-    
-
-</div> 
-
-
-
-
-  <div class="form-group">
-
-    <mat-form-field appearance="fill">
-        <mat-label>Mobile</mat-label>
-        <input matInput class = "form-control" name="mobile" [(ngModel)]="userMobile" pattern="^\+91[6-9][0-9]{9}" required #mobileField="ngModel">   
-      </mat-form-field>
-      <p> {{userMobile}}</p>
-  
-  </div>
-
-  <!--validate email-->
-
-  <div  *ngIf="mobileField.touched" name="validatingName">
-
-    <p *ngIf="mobileField.errors?.['required']" class="error"> Mobile number is mandatory </p>
-    <p *ngIf="mobileField.errors?.['pattern']"> pattern does not match </p>
-
-</div> 
-
-
-    <div ngModelGroup="address">
-
-        <mat-form-field appearance="fill">
-            <mat-label>Street</mat-label>
-            <input matInput class = "form-control" name="street" [(ngModel)]="userStreet">   
-          </mat-form-field>
-          <p> {{userStreet}}</p>
-
-    
-    <div class="form-group">
-
-        <mat-form-field appearance="fill">
-            <mat-label>City</mat-label>
-            <input matInput class = "form-control" name="city" [(ngModel)]="userCity">   
-          </mat-form-field>
-          <p> {{userCity}}</p>
-   
-    
-    </div>
-
-    <div class="form-group">
-
-        <mat-form-field appearance="fill">
-            <mat-label>Street</mat-label>
-            <input matInput class = "form-control" name="zipcode" [(ngModel)]="userZipCode">   
-          </mat-form-field>
-          <p> {{userZipCode}}</p>
-
-    </div>
-
-
-  </div>
-
-
-  <button type="submit" class="btn btn-primary">  Submit Form  </button>
-</form>
+    <button type="submit" class="btn btn-primary">Submit Form</button>
+  </form>
+</div>

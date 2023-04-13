@@ -1,27 +1,21 @@
-<p>{{customerName}} is {{customerAge}} years old</p>
+<div class="Customer--Container">
+  <p [ngStyle]="style1">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, ipsum.
+  </p>
 
-<button (click)="showMessage()">Click Me</button>
+  <button mat-raised-button color="warn" (click)="changeStyle()">
+    Change Style
+  </button>
 
-<p [ngStyle]="style1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, ipsum.</p>
+  <p [style.color]="styleClass" class="my-2">Displaying message</p>
 
-<button (click)="changeStyle()">Change Style</button>
-
-
-<p [style.color]="styleClass">Displaying message</p>
-
-<!-- <button (click)="toggleDisplay()">Toggle Display</button>
-<div [hidden]="toggleBox">
-    haha
-</div> -->
-
-<button (click)="ShowData()">Display Data</button>
-<div class="DisplayDataClass">
-    <p>{{employee[0].name}}</p>
-    <p>{{employee[0].age}}</p>
-    <p>{{employee[0].email}}</p>
-    <p>{{employee[0].skills}}</p>
-    
-    
+  <button mat-raised-button color="accent" (click)="ShowData()">
+    Display Data
+  </button>
+  <div class="DisplayDataClass my-4" *ngIf="employee[0].age">
+    <p>{{ employee[0].name }}</p>
+    <p>{{ employee[0].age }}</p>
+    <p>{{ employee[0].email }}</p>
+    <p>{{ employee[0].skills }}</p>
+  </div>
 </div>
-
-

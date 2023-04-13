@@ -4,67 +4,56 @@ import { Employee } from '../models/Employee';
 @Component({
   selector: 'app-customer',
   templateUrl: './customer.component.html',
-  styleUrls: ['./customer.component.css']
+  styleUrls: ['./customer.component.css'],
 })
 export class CustomerComponent {
-
-  customerCategory: string = "Premium"
-  customerName: string = "Yash";
-  customerAge: number = 22
-
-  showMessage(){
-    console.log("Clicked")
-  }
+  customerCategory: string = 'Premium';
+  customerName: string = 'Yash';
+  customerAge: number = 22;
 
   toggleBox: boolean = false;
 
-  toggleDisplay(){
-    this.toggleBox = !this.toggleBox
+  toggleDisplay() {
+    this.toggleBox = !this.toggleBox;
   }
 
   style1 = {
-    'color': 'blue'
-  }
+    color: 'blue',
+  };
 
   styleClass = 'blue';
 
-  changeStyle(){
-    if(this.style1.color == 'blue'){
-      this.style1.color = 'red'
+  changeStyle() {
+    if (this.style1.color == 'blue') {
+      this.style1.color = 'red';
     } else {
-      this.style1.color = 'blue'
+      this.style1.color = 'blue';
     }
 
-    if(this.styleClass == 'blue'){
+    if (this.styleClass == 'blue') {
       this.styleClass = 'red';
-    }else{
+    } else {
       this.styleClass = 'blue';
     }
-    
   }
-
 
   employee: Employee[] = [
     {
-      name: "",
+      name: '',
       age: 0,
-      email: "",
-      skills: ""
-    }
-  ]
-  
-  ShowData(){
+      email: '',
+      skills: '',
+    },
+  ];
+
+  ShowData() {
     this.employee = [
       {
-        name: "yash",
+        name: 'yash',
         age: 22,
-        email: "Yash@gmail.com",
-        skills: "Java, C++, Python, TypeScript"
-      }
-    ]
+        email: 'Yash@gmail.com',
+        skills: 'Java, C++, Python, TypeScript',
+      },
+    ];
   }
-
-  
-
-
 }
